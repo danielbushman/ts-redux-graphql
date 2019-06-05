@@ -1,12 +1,13 @@
-import { createStore } from "redux";
-import { enthusiasm } from "./reducers/reducers";
-import { StoreState } from "../types/types";
+import { createStore } from 'redux';
+import { enthusiasm } from './hello/reducers';
+import { IStoreState } from './hello/types';
+import { IEnthusiasmAction } from './hello/actions';
 
-export const initialState = {
+export const initialState: IStoreState = {
   enthusiasmLevel: 1,
-  languageName: "TypeScript"
+  languageName: 'TypeScript',
 };
 
-const store = createStore<StoreState>(enthusiasm, initialState);
+const store = createStore<IStoreState, IEnthusiasmAction, null, null>(enthusiasm, initialState);
 
 export default store;
