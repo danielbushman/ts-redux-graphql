@@ -1,11 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import Hello from "./components/Hello";
+import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
+import store from "./store/store";
+import Hello from "./components/Hello";
+
+import "./index.css";
 
 ReactDOM.render(
-  <Hello name="TypeScript" enthusiasmLevel={10} />,
+  <Provider store={store}>
+    <Hello />
+  </Provider>,
   document.getElementById("root") as HTMLElement
 );
 
